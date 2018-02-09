@@ -1,0 +1,170 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #888;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  overflow: visible
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+button,
+select {
+  text-transform: none
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+button[disabled] {
+  -webkit-appearance: button;
+  cursor: pointer
+}
+
+input[type="tel"],
+input[type="password"],
+input[type="text"] {
+  -webkit-appearance: none;
+}
+
+.input {
+  border: 1px solid #fff;
+  background-color: #fff;
+  padding: 16px 20px;
+  font-size: 16px;
+  color: #000;
+}
+
+.input:::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+.not-allowed {
+  cursor: not-allowed !important;
+}
+
+html {
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: none;
+  -webkit-backface-visibility: hidden;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  background-color: #fff;
+  line-height: 1;
+  font-size: 14px;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " "
+}
+
+.clearfix:after {
+  clear: both
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  border: 1px solid #ddd;
+  padding: 8px 24px;
+}
+
+.btn:hover {
+  opacity: .7;
+  transition: opacity .4s;
+}
+
+.ellipsis {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.arrow-top::before {
+  border-style: solid;
+  height: 0;
+  width: 0;
+  border-width: 1em;
+  border-color: transparent transparent #ddd;
+  content: "";
+  display: inline-block;
+}
+
+.arrow-right::before {
+  border-style: solid;
+  height: 0;
+  width: 0;
+  border-width: 1em;
+  border-color: transparent transparent transparent #ddd;
+  content: "";
+  display: inline-block;
+}
+
+.arrow-bottom::before {
+  border-style: solid;
+  height: 0;
+  width: 0;
+  border-width: 1em;
+  border-color: #ddd transparent transparent;
+  content: "";
+  display: inline-block;
+}
+
+.arrow-left::before {
+  border-style: solid;
+  height: 0;
+  width: 0;
+  border-width: 1em;
+  border-color: transparent #ddd transparent transparent;
+  content: "";
+  display: inline-block;
+}
