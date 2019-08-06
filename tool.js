@@ -1,3 +1,25 @@
+export const isWeixin = (() => {
+  return navigator.userAgent.indexOf('MicroMessenger') > -1
+})()
+
+export const isWeibo = (() => {
+  return navigator.userAgent.indexOf('Weibo') > -1
+})()
+
+export const sleep = time => {
+  return new Promise(resolve => {
+    setTimeout(resolve, time)
+  })
+}
+
+export const isDD = (() => {
+  return navigator.userAgent.indexOf('DingTalk') > -1
+})()
+
+export const isMobile = (() => {
+  return /(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)
+})()
+
 /**
  * [getParam 获取url参数]
  * @param  {[string]} name [参数名称]
@@ -91,7 +113,7 @@ export const milliFormat = num => {
 export const fnCount = (fn, count = 1) => {
   let index = 0
 
-  return function () {
+  return function() {
     if (index === count) {
       fn = null
       return false
@@ -119,9 +141,9 @@ export const RMBformat = (str) => str.toString().replace(/\d+/, (s) => s.replace
  * @returns
  */
 export const isType = val => {
-  return val == null
-    ? String(val)
-    : Object.prototype.toString.call(val).slice(8, -1).toLowerCase()
+  return val == null ?
+    String(val) :
+    Object.prototype.toString.call(val).slice(8, -1).toLowerCase()
 }
 
 /**
@@ -326,7 +348,7 @@ export const debounce = (fn, wait, immediate) => {
   const _wait = wait || 200
   const _immediate = immediate || true
 
-  return function () {
+  return function() {
     const args = arguments
 
     timer && clearTimeout(timer)
@@ -344,8 +366,7 @@ export const debounce = (fn, wait, immediate) => {
 }
 
 // TODO
-export const throttle = () => {
-}
+export const throttle = () => {}
 
 /**
  * 是否在元素里
@@ -354,6 +375,10 @@ export const throttle = () => {
  */
 export const contains = (el, target) => {
   return el.contains(target)
+}
+
+export const hasIdClass = (el, elem) => {
+  return el.matches(elem)
 }
 
 /**
@@ -369,15 +394,15 @@ export const isKB = () => window.navigator.userAgent.indexOf('qnreading') > -1
 export const isQQnews = () => window.navigator.userAgent.indexOf('qqnews') > -1
 export const isQB = () => window.navigator.userAgent.indexOf('QBWebViewType') > -1
 
-const performance = (function () {
+const performance = (function() {
   var perf = window.performance || {}
 
   if (typeof perf.now !== 'function') {
-    var nowOffset = perf.timing && perf.timing.navigationStart
-      ? perf.timing.navigationStart
-      : new Date().getTime()
+    var nowOffset = perf.timing && perf.timing.navigationStart ?
+      perf.timing.navigationStart :
+      new Date().getTime()
 
-    perf.now = function () {
+    perf.now = function() {
       return new Date().getTime() - nowOffset
     }
   }
@@ -401,10 +426,10 @@ if (
   !window.cancelAnimationFrame
 ) {
   var lastTime = 0
-  window.requestAnimationFrame = function (callback) {
+  window.requestAnimationFrame = function(callback) {
     var now = performance.now()
     var nextTime = Math.max(lastTime + 16, now)
-    return setTimeout(function () {
+    return setTimeout(function() {
       callback((lastTime = nextTime))
     }, nextTime - now)
   }
